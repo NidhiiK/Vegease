@@ -5,6 +5,13 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from bs4 import BeautifulSoup
 import time
+
+# Function to scroll down and load more content
+def scroll_down(driver, num_scrolls):
+    for _ in range(num_scrolls):
+        driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+        time.sleep(1)  # Adjust sleep duration as needed
+
 # Function to scrape products using Selenium
 def scrape_products(url):
     options = webdriver.ChromeOptions()
@@ -21,10 +28,7 @@ def scrape_products(url):
     driver.get(url)
 
     # Scroll down to load more content (you can adjust the number of scrolls)
-    num_scrolls = 20
-    for _ in range(num_scrolls):
-        driver.find_element(By.TAG_NAME, "body").send_keys(Keys.PAGE_DOWN)
-        time.sleep(1)  # Adjust sleep duration as needed
+    scroll_down(driver, 20)
 
     # Wait for the product elements to be present on the page
     WebDriverWait(driver, 20).until(
@@ -42,6 +46,7 @@ def scrape_products(url):
 
     # Find and return the product cards
     product_cards = soup.find_all("div", attrs={"data-pf": "reset"})
+    print(len(product_cards))
 
     return product_cards
 
@@ -49,20 +54,16 @@ def scrape_products(url):
 if __name__ == "__main__":
     blinkit_url = 'https://blinkit.com/cn/vegetables-fruits/fresh-vegetables/cid/1487/1489'  # Replace with the actual URL
     blinkit_product_cards = scrape_products(blinkit_url)
-
-    # Extract and print product details
     for card in blinkit_product_cards:
-        product_name_elem = card.find("div", class_="tw-text-300 tw-font-semibold tw-line-clamp-2")
-        product_quantity_elem = card.find("div", class_="tw-text-200 tw-font-medium tw-line-clamp-1 tw-text-base-green")
+        product_name_elem = card.find("div", class_="tw-text-300")
+        product_quantity_elem = card.find("div", class_="tw-text-200 tw-font-medium tw-line-clamp-1")
         product_price_elem = card.find("div", class_="tw-text-200 tw-font-semibold")
 
-        # Check if the elements are found and extract text
-        if product_name_elem and product_quantity_elem and product_price_elem:
-            product_name = product_name_elem.text.strip()
-            product_quantity = product_quantity_elem.text.strip()
-            product_price = product_price_elem.text.strip()
+        # Check if the elements are found, and get their text if found, or assign "N/A" if not found
+        product_name = product_name_elem.text.strip() if product_name_elem else "N/A"
+        product_quantity = product_quantity_elem.text.strip() if product_quantity_elem else "N/A"
+        product_price = product_price_elem.text.strip() if product_price_elem else "N/A"
 
-            print("Product Name:", product_name)
-            print("Product Quantity:", product_quantity)
-            print("Product Price:", product_price)
-            print()
+        print(f"Product Name: {product_name}")
+        print(f"Product Quantity: {product_quantity}")
+        print(f"Product Price: {product_price}\n")
