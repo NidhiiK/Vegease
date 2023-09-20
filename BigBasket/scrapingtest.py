@@ -28,7 +28,7 @@ def scrape_products(url):
     driver.get(url)
 
     # Scroll down to load more content (you can adjust the number of scrolls)
-    scroll_down(driver, 10)
+    scroll_down(driver, 30)
 
     # Get the page source after scrolling
     page_source = driver.page_source
@@ -37,7 +37,20 @@ def scrape_products(url):
     soup = BeautifulSoup(page_source, "html.parser")
 
     # Find and return the product cards
-    product_cards = soup.find_all("li", class_="PaginateItems___StyledLi-sc-1yrbjdr-0")
+    # Find and return the product cards (first class)
+    product_cards = soup.find_all("li", class_=["PaginateItems___StyledLi-sc-1yrbjdr-0", "PaginateItems___StyledLi2-sc-1yrbjdr-1 kUiNOF"])
+
+    # # Find and return the product cards (second class)
+    # product_cards_class2 = soup.find_all("li", class_="PaginateItems___StyledLi2-sc-1yrbjdr-1")
+
+    # # Combine the product cards from both classes
+    # all_product_cards = product_cards_class1 + product_cards_class2
+
+    # Find the length (number) of product cards
+    num_product_cards = len(product_cards)
+
+    print(f"Number of Product Cards: {num_product_cards}")
+    
 
     # Create a list to store product details
     products = []
@@ -45,23 +58,32 @@ def scrape_products(url):
     # Loop through each product card and extract details
     for card in product_cards:
         product_name_elem = card.find("h3", class_="text-base")
-        product_brand_elem = card.find("span", class_="Label-sc-15v1nk5-0 BrandName___StyledLabel2-sc-hssfrl-1")
+        # product_brand_elem = card.find("span", class_="Label-sc-15v1nk5-0 BrandName___StyledLabel2-sc-hssfrl-1")
         original_price_elem = card.find("span", class_="Label-sc-15v1nk5-0 Pricing___StyledLabel2-sc-pldi2d-2 gJxZPQ hsCgvu")
         discounted_price_elem = card.find("span", class_="Label-sc-15v1nk5-0 Pricing___StyledLabel-sc-pldi2d-1 gJxZPQ AypOi")
+        discount_precentage_elm = card.find("span", class_= "font-semibold lg:text-xs xl:text-sm leading-xxl xl:leading-md")
+        quantity_elm = card.find("span", class_= "Label-sc-15v1nk5-0 PackChanger___StyledLabel-sc-newjpv-1 gJxZPQ cWbtUx")
+
+
         # Label-sc-15v1nk5-0 Pricing___StyledLabel-sc-pldi2d-1
 
         # Check if the elements are found, and get their text if found, or assign "N/A" if not found
         product_name = product_name_elem.text.strip() if product_name_elem else "N/A"
-        product_brand = product_brand_elem.text.strip() if product_brand_elem else "N/A"
+        # product_brand = product_brand_elem.text.strip() if product_brand_elem else "N/A"
         original_price = original_price_elem.text.strip() if original_price_elem else "N/A"
         discounted_price = discounted_price_elem.text.strip() if discounted_price_elem else "N/A"
+        discount_value = discount_precentage_elm.text.strip() if discount_precentage_elm else "N/A"
+        quantity = quantity_elm.text.strip() if quantity_elm else "N/A"
+
 
         # Create a dictionary to store the product details
         product_details = {
             "Product Name": product_name,
-            "Brand": product_brand,
+            # "Brand": product_brand,
             "Original Price": original_price,
             "Discounted Price": discounted_price,
+            "Discount" : discount_value,
+            "Quantity" : quantity
         }
 
         # Append the product details to the list of products
@@ -74,13 +96,17 @@ def scrape_products(url):
 
 # Test the scraper
 if __name__ == "__main__":
-    bigbasket_url = 'https://www.bigbasket.com/cl/fruits-vegetables/?nc=nb'
+    bigbasket_url = 'https://www.bigbasket.com/pc/fruits-vegetables/fresh-vegetables/?nc=ct-fa'
     products_list = scrape_products(bigbasket_url)
+    
 
     # Print the scraped product details
     for product in products_list:
         print(f"Product Name: {product['Product Name']}")
-        print(f"Brand: {product['Brand']}")
+        # print(f"Brand: {product['Brand']}")
         print(f"Original Price: {product['Original Price']}")
         print(f"Discounted Price: {product['Discounted Price']}")
+        print(f"Discount: {product['Discount']}")
+        print(f"Quantity: {product['Quantity']}")
         print("-" * 50)
+
