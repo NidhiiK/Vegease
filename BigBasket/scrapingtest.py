@@ -1,4 +1,5 @@
 from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
@@ -6,11 +7,27 @@ from selenium.webdriver.support import expected_conditions as EC
 from bs4 import BeautifulSoup
 import time
 
-# Function to scroll down and load more content
-def scroll_down(driver, num_scrolls):
-    for _ in range(num_scrolls):
+# # Function to scroll down and load more content
+# def scroll_down(driver, num_scrolls):
+#     for _ in range(num_scrolls):
+#         driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+#         time.sleep(2)  # Adjust sleep duration as needed
+
+# Function to scroll down and load more content until no more items are loaded
+# Function to scroll down in smaller steps until no more items are loaded
+# Function to scroll down until no more items are loaded (infinite scrolling)
+# Function to scroll down until no more items are loaded (infinite scrolling)
+def scroll_down_until_end(driver):
+    last_height = driver.execute_script("return document.body.scrollHeight")
+    while True:
         driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
         time.sleep(2)  # Adjust sleep duration as needed
+        new_height = driver.execute_script("return document.body.scrollHeight")
+        if new_height == last_height:
+            break
+        last_height = new_height
+
+
 
 # Function to scrape products using Selenium
 def scrape_products(url):
@@ -19,7 +36,7 @@ def scrape_products(url):
     options.add_argument("--disable-gpu")  # Disable GPU acceleration
 
     # Initialize Chrome WebDriver with options
-    driver = webdriver.Chrome(options=options)
+    driver = webdriver.Chrome(options=options)  # Use `chrome_options` instead of `options`
 
     # Set an implicit wait to wait for elements to load
     driver.implicitly_wait(10)
@@ -28,7 +45,13 @@ def scrape_products(url):
     driver.get(url)
 
     # Scroll down to load more content (you can adjust the number of scrolls)
-    scroll_down(driver, 30)
+    # scroll_down_until_end(driver)
+
+    # Scroll down until no more items are loaded
+    scroll_down_until_end(driver)
+
+    # Wait for the page to fully load (you may need to adjust the timeout)
+    WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CLASS_NAME, "PaginateItems___StyledLi-sc-1yrbjdr-0")))
 
     # Get the page source after scrolling
     page_source = driver.page_source
@@ -38,7 +61,7 @@ def scrape_products(url):
 
     # Find and return the product cards
     # Find and return the product cards (first class)
-    product_cards = soup.find_all("li", class_=["PaginateItems___StyledLi-sc-1yrbjdr-0", "PaginateItems___StyledLi2-sc-1yrbjdr-1 kUiNOF"])
+    product_cards = soup.find_all("li", class_=["PaginateItems___StyledLi-sc-1yrbjdr-0", "PaginateItems___StyledLi2-sc-1yrbjdr-1"])
 
     # # Find and return the product cards (second class)
     # product_cards_class2 = soup.find_all("li", class_="PaginateItems___StyledLi2-sc-1yrbjdr-1")
@@ -51,6 +74,8 @@ def scrape_products(url):
 
     print(f"Number of Product Cards: {num_product_cards}")
     
+
+    driver.quit()
 
     # Create a list to store product details
     products = []
