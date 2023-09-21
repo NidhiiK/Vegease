@@ -35,36 +35,33 @@
 # price_change_notifier.py
 
 import pandas as pd
-from notifier import send_notification
-from notification_formatter import format_notification_table  # Import the formatter function
+from notification_formatter import format_notification_table
 
 def send_price_change_notifications(existing_df, all_updated_products):
-    if existing_df.empty:
-        return  # No previous data, cannot send price change notifications
-
-    # Initialize a string to store the notifications for both categories
-    notification_text = ""
+    # Initialize a dictionary to store category-wise notifications
+    category_notifications = {}
 
     for category, updated_products in all_updated_products.items():
-        if not updated_products:
-            continue  # No updated products in this category
+        # Check if there are updated products in this category
+        if updated_products:
+            # Create a DataFrame for the updated products
+            updated_df = pd.DataFrame(updated_products, columns=["product_name", "original_price_prev", "discounted_price_prev", "discount_prev", "category", "quantity", "timestamp", "original_price_cur", "discounted_price_cur", "discount_cur"])
 
-        # Create a DataFrame for the updated products in this category
-        updated_df = pd.DataFrame(updated_products, columns=["product_name_cur", "original_price_cur", "discounted_price_cur", "discount_cur"])
+            # Find rows where prices have changed
+            price_changed_rows = updated_df[updated_df['discounted_price_prev'] != updated_df['discounted_price_cur']]
 
-        # Merge the new DataFrame with the existing DataFrame based on product_name
-        merged_df = pd.merge(existing_df, updated_df, left_on='product_name', right_on='product_name_cur', suffixes=('_prev', '_cur'))
+            # Check if there are price changes in this category
+            if not price_changed_rows.empty:
+                # Format notification for this category
+                category_notification_text = f"Price changes detected in '{category}':\n"
+                category_notification_text += format_notification_table(price_changed_rows[["product_name", "original_price_prev", "discounted_price_prev", "discount_prev", "original_price_cur", "discounted_price_cur", "discount_cur"]].values.tolist())
+                
+                # Store the notification for this category
+                category_notifications[category] = category_notification_text
 
-        # Find rows where the discounted_price has changed
-        price_changed_rows = merged_df[merged_df['discounted_price_prev'] != merged_df['discounted_price_cur']]
+    # Create a combined notification text for all categories
+    combined_notification_text = "\n".join(category_notifications.values())
 
-        # Check if there are any price changes in this category
-        if not price_changed_rows.empty:
-            # Prepare and append notifications for price changes in this category
-            category_notification_text = f"Price changes detected in '{category}':\n"
-            category_notification_text += format_notification_table(price_changed_rows[["product_name_cur", "original_price_prev", "discounted_price_prev", "discount_prev", "original_price_cur", "discounted_price_cur", "discount_cur"]].values.tolist())
-            notification_text += category_notification_text
+    return combined_notification_text
 
-    # Send a single email containing notifications for both categories, if there are any
-    if notification_text:
-        send_notification("Price Changes Alert", notification_text, 'kdhini2807@gmail.com')
+
