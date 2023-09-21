@@ -79,6 +79,10 @@ def main_function(url, category_name, existing_df):
     # Update the inserted products file
     update_inserted_products('E:\VegEase\BigBasket\Bigbasket_inserted_products.txt', inserted_products)
 
+    # Add these lines to create the required columns
+    existing_df["discounted_price_prev"] = existing_df["discounted_price"]
+    existing_df["discounted_price_cur"] = existing_df["discounted_price"]
+
     return new_products, updated_products
 
 if __name__ == "__main__":
