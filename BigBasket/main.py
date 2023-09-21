@@ -7,6 +7,7 @@ from notifier import send_notification
 from utils import load_inserted_products, update_inserted_products
 from datetime import datetime
 from notification_formatter import format_notification_table
+from price_change_notifier import send_price_change_notifications
 
 # Define a function to create an Excel file with multiple sheets
 def create_excel_file(categories):
@@ -109,6 +110,9 @@ if __name__ == "__main__":
      
         # Remove duplicates from the combined DataFrame
         existing_df.drop_duplicates(subset=["product_name"], keep="last", inplace=True)    
+
+    # Send price change notifications
+    send_price_change_notifications(existing_df, all_updated_products)
         
     # Update Excel file and sheets
     with pd.ExcelWriter('E:\VegEase\BigBasket\Bigbasket_products.xlsx', engine='xlsxwriter') as writer:
@@ -124,6 +128,3 @@ if __name__ == "__main__":
     # Send notifications for new and updated products
     if new_products_notification_text:
         send_notification("New Products Alert", f"New products added:\n{new_products_notification_text}\nCheck them out!", 'kdhini2807@gmail.com')
-
-    if updated_products_notification_text:
-        send_notification("Price Changes Alert", f"Price changes detected:\n{updated_products_notification_text}\nTime to grab a deal!", 'kdhini2807@gmail.com')
