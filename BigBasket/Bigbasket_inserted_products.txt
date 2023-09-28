@@ -1,196 +1,214 @@
-Lettuce - Green
-Spring Onion - With roots
-Ladies' Fingers (Loose)
-Ber (Loose)
-Coconut - Medium
-Plum - Indian
-Mango - Raw, Totapuri
-Guava (Loose)
-Ladies' Fingers - Organically Grown (Loose)
-Banana Stem - Organically Grown (Loose)
-Mosambi - Economy (Loose)
-Avocado
-Guava - Thai (Loose)
-Pumpkin - Organically Grown (Loose)
-Baby Banana - Robusta
-Brinjal - Bottle Shape (Loose)
-Lemon Grass
-Pear Beauty
-Papaya - Small
-Carrot - Ooty (Loose)
-Celery
-Orange - Imported (Loose)
-Beans - French, Ring (Loose)
-Baby Potato (Loose)
-Green Peas (Loose)
-Mangosteen
-Raw Mango - Rich in Vitamin C (Loose)
-Apple - Shimla
-Watermelon - Organically Grown (Loose)
-Lettuce - Iceberg
-Cucumber - English (Loose)
-Cherry - Kashmir
-Capsicum - Green, Organically Grown (Loose)
-Papaya
-Apple - Fuji, Economy
-Chow Chow (Loose)
-Beans - Organically Grown (Loose)
-Apricot - Dried
-Mallika Mango
-Pear - Green, Imported
-Pineapple
-Sapota
-Beans - French Ring, Organically Grown
-Tender Coconut
-Parwal (Loose)
-Chilli - Green, Organically Grown (Loose)
-Mint - Organically Grown
-Beetroot (Loose)
-Amaranthus - Red Cleaned, without roots
-Apple - Royal Gala Economy
-Guava - Organically Grown (Loose)
-Grapes - Red Globe
-Dragon Fruit (Loose)
-Blueberry
-Pear - Beauty, Rich In Fiber, Vitamin C, Great For Gut Health
-Pear - Naspathi, Indian
-Beans - Cluster (Loose)
-Rambutan
-Potato - Red (Loose)
-Banana - Red
-Onion - Sambhar (Loose)
-Knol Khol (Loose)
 Apple - Red Delicious, Economy
-Coconut with Husk - Pooja Coconut
-Ginger - Organically Grown (Loose)
-Tomato - Hybrid
-Snake Gourd
-Tomato - Hybrid, Organically Grown (Loose)
-Mosambi - Premium (Loose)
-Brinjal - Green, Long (Loose)
-Papaya- Diced
-Radish - White (Loose)
-Tomato - Cherry
-Banana - Robusta
-Dates - Kimia, with Seed
-Drumstick/Moringa
-Coconut - Large
-Sweet Corn (Loose)
-Ash Gourd - Cut
-Cauliflower - Organically Grown
-Papaya - Raw
-Sapota - Organically Grown (Loose)
-Beans - Cowpea (Loose)
-Zespri Kiwi - Sun Gold
-Mosambi - Organically Grown (Loose)
-Ridge Gourd
-Grapes - Red Globe‚  Indian
-Beetroot - Organically Grown (Loose)
-Pomegranate - Peeled
-Cucumber - Mangalore
-Cherry
 Plum - Imported
-Palak - Cleaned, without roots
-Mango - Banganpalli
-Mini Orange Imported (Loose)
-Soursop
-Onion
-Ginger - Organically Grown
-Bitter Gourd - Organically Grown (Loose)
-Kiwi - Green
-Beans - Broad (Loose)
+Cherry
 Tomato - Hybrid (Loose)
-Bottle Gourd (Loose)
-Mango - Neelam
-Coloured Capsicum Mix
-Apple - Red Delicious / Washington, Regular
-Sweet Potato - Organically Grown (Loose)
-Apple - Royal Gala, Premium
-Avocado - Imported, Medium (Loose)
-Onion - Organically Grown (Loose)
-Apple - Washington, Regular
-Apple - Ambri
-Cucumber - Organically Grown (Loose)
-Fresh Figs
-Amla (Loose)
-Apple - Red Delicious, Regular
-Drumstick Leaves
-Sugarcane
-Langra Mango
-Himayath Mango
-Apple - Fuji, Regular
-Coconut - Diced
-Curry Leaves
-Apple - Royal Gala, Regular
-Broccoli
-Banana - Raw Green (Loose)
-Cucumber
-Palak - Organically Grown
-Tamarind - Sweet
-Ber - Apple (Loose)
-Banana - Nendran, Organically Grown
-Coriander Leaves
-Onion (Loose)
-Sweet Potato (Loose)
-Raspuri/Gola Mango
-Amaranthus - Green Cleaned, without roots
-Rosemary
-Banana - Yelakki, Organically Grown
-Avocado (Loose)
-Baby Corn - Unpeeled (Loose)
-Muskmelon -  Netted Medium
-Basale Leaf
-Pomelo - Peeled
-Guava - Thai Organic, White
-Bitter Gourd - Forest (Loose)
-Tomato - Local, Organically Grown (Loose)
-Grapes - Bangalore Blue with Seed
-Capsicum - Green (Loose)
-Pomegranate - Single Serve, Peeled
-Banana - Karpooravalli
-Banana - Robusta, Organically Grown
-Banana Flower - Organically Grown (Loose)
-Coriander Leaves - Organically Grown
-Longan
-Banana - Nendran
-Beans - Haricot (Loose)
-Mosambi (Loose)
-Baby Apple
-Brinjal - Varikatri (Loose)
-English Cucumber - Organically grown (Loose)
-Apple - Green, Regular
-Apple - Shimla, Regular
-Cauliflower
-Pineapple - Chunks, Single Serve
-Mushrooms - Button
-Potato - Organically Grown (Loose)
-Pumpkin - Disco
-Watermelon -  Medium
-Grapes - Bangalore Blue
-Mint Leaves - Cleaned, without roots
-Cabbage (Loose)
-Colocasia (Loose)
-Methi/Venthaya Keerai - Cleaned, without roots
-Coconut - Organically Grown (Loose)
-Pumpkin Green - Cut
-Gongura Leaves/Pulicha - Cleaned, without roots
-Bottle Gourd - Organically Grown (Loose)
-Grape fruit - Imported (Loose)
-Coccinia (Loose)
-Pomegranate (Loose)
-Groundnut - Fresh (Loose)
-Bitter Gourd (Loose)
-Pomegranate - Regular (Loose)
-Banana - Poovan
-Carrot - Orange (Loose)
 Yam - Cut
+Ladies' Fingers (Loose)
+Langra Mango
+Snake Gourd
+Bottle Gourd - Organically Grown (Loose)
+Amaranthus - Green Cleaned, without roots
+Sweet Corn (Loose)
+Cauliflower
+Apple - Red Delicious, Regular
+Grapes - Bangalore Blue with Seed
 Apple - Pink Lady
-Pineapple - Slices
-Watermelon  - Small
-Cabbage - Organically Grown (Loose)
-Banana - Yelakki
-Garlic - Organically Grown (Loose)
+Ridge Gourd - Organically Grown (Loose)
+Pear - Beauty, Rich In Fiber, Vitamin C, Great For Gut Health
+Cucumber - Organically Grown (Loose)
+Tomato - Cherry
+Bitter Gourd (Loose)
+Coriander Leaves - Organically Grown
+Mango - Neelam
+Drumstick Leaves
+Guava - Organically Grown (Loose)
+Radish - White (Loose)
+Kiwi - Green
+Mosambi - Organically Grown (Loose)
+Rosemary
+Sapota - Organically Grown (Loose)
+Chilli - Green, Organically Grown (Loose)
+Apple - Red Delicious / Washington, Regular
+Ridge Gourd
+Methi/Venthaya Keerai - Cleaned, without roots
+Banana - Nendran
+Mango - Raw, Totapuri
+Papaya- Diced
+Pineapple
+Potato - Red (Loose)
+Apple - Green, Regular
+Mint - Organically Grown
+Corriander  - Organically Grown
+Ginger - Organically Grown (Loose)
+Mango - Banganpalli
+Coloured Capsicum Mix
+Watermelon - Organically Grown (Loose)
+Papaya
 Dill Leaves
-Ash Gourd (Loose)
-Kesar Mango
+Raw Mango - Rich in Vitamin C (Loose)
+Banana - Karpooravalli
+Avocado - Imported, Medium (Loose)
+Brinjal - Green, Long (Loose)
+Tomato - Hybrid, Organically Grown (Loose)
+Lettuce - Iceberg
+Baby Potato (Loose)
+Brinjal - Varikatri (Loose)
+Gongura Leaves/Pulicha - Cleaned, without roots
+Capsicum - Red, Organically Grown (Loose)
+Carrot - Orange (Loose)
+Grapes - Red Globe
+Ber (Loose)
+Tomato - Local (Loose)
+Pear - Green, Imported
+Blueberry
+Onion
+Mosambi - Economy (Loose)
+Passion Fruit
+Grape fruit - Imported (Loose)
+Tamarind - Sweet
+Lettuce - Green
+Pomegranate - Single Serve, Peeled
+Onion (Loose)
+Mallika Mango
+Raspuri/Gola Mango
+Orange - Imported (Loose)
+Plum - Indian
+English Cucumber - Organically grown (Loose)
+Apricot - Dried
+Spring Onion - With roots
+Banana - Poovan
+Tomato - Green (Loose)
+Amla (Loose)
+Cucumber - Mangalore
+Cauliflower - Organically Grown
+Pineapple - Slices
+Apple - Royal Gala, Regular
+Pomelo - Peeled
+Ladies' Fingers - Organically Grown (Loose)
+Apple - Shimla, Regular
+Avocado
+Mini Orange Imported (Loose)
+Pomegranate - Regular (Loose)
+Banana - Red
+Mint Leaves - Cleaned, without roots
+Garlic - Organically Grown (Loose)
+Mango - Raw Totapuri
+Raw Mango (Loose)
+Watermelon -  Medium
 Tomato - Local
+Bitter Gourd - Forest (Loose)
+Cucumber
+Celery
+Muskmelon -  Netted Medium
+Beans - French Ring, Organically Grown
+Coconut - Large
+Beans - Haricot (Loose)
+Grapes - Red Globe‚  Indian
+Fresh Figs
+Baby Apple Shimla
+Pumpkin - Organically Grown (Loose)
+Orange - Nagpur, Small (Loose)
+Coconut - Organically Grown (Loose)
+Sweet Potato (Loose)
+Potato - Organically Grown (Loose)
+Banana - Yelakki
+Lemon Grass
+Watermelon  - Small
+Beans - Broad (Loose)
+Banana - Nendran, Organically Grown
+Broccoli
+Cherry - Imported
+Banana - Raw Green (Loose)
+Mushrooms - Button
+Onion - Organically Grown (Loose)
+Banana - Robusta
+Baby Corn - Unpeeled (Loose)
+Pear - Naspathi, Indian
+Tender Coconut
+Cabbage - Organically Grown (Loose)
+Parwal (Loose)
+Banana Flower - Organically Grown (Loose)
+Zespri Kiwi - Sun Gold
+Beans - Cowpea (Loose)
+Groundnut - Fresh (Loose)
+Apple - Red Delicious / Washington, Premium
+Apple - Green, Premium
+Guava (Loose)
+Mangosteen
+Cabbage (Loose)
+Ash Gourd (Loose)
+Ginger - Organically Grown
+Apple - Royal Gala, Premium
+Mosambi - Premium (Loose)
+Apple - Ambri
+Coriander Leaves
+Banana - Yelakki, Organically Grown
+Beans - Cluster (Loose)
+Coccinia (Loose)
+Guava - Thai Organic, White
+Sapota - Organically Grown
+Dragon Fruit (Loose)
+Baby Apple
+Potato
+Coconut with Husk - Pooja Coconut
+Guava - Thai (Loose)
+Himayath Mango
+Rambutan
+Beans - French, Ring (Loose)
+Chilli - Green, Organically Grown
+Colocasia (Loose)
+Soursop
+Capsicum - Green (Loose)
+Ash Gourd - Cut
+Apple - Fuji, Regular
+Baby Banana - Robusta
+Banana Stem - Organically Grown (Loose)
+Pear Beauty
+Knol Khol (Loose)
+Drumstick/Moringa
+Tomato - Hybrid
+Sapota
+Apple - Fuji, Economy
+Apple - Shimla
+Palak - Organically Grown
+Pomegranate (Loose)
+Apple - Washington, Regular
+Kesar Mango
+Beans - Organically Grown (Loose)
+Cherry - Kashmir
+Apple - Royal Gala Economy
+Palak - Cleaned, without roots
+Coconut - Diced
+Basale Leaf
+Bottle Gourd (Loose)
+Chow Chow (Loose)
+Grapes - Bangalore Blue
+Cucumber - English (Loose)
+Longan
+Dates - Kimia, with Seed
+Cucumber (Loose)
+Beetroot - Organically Grown (Loose)
+Papaya - Small
+Brinjal - Bottle Shape (Loose)
+Banana - Robusta, Organically Grown
+Ber - Apple (Loose)
+Amaranthus - Red Cleaned, without roots
+Pumpkin Green - Cut
+Apple - Shimla, Premium
+Curry Leaves
+Coconut - Medium
+Papaya - Raw
+Sweet Potato - Organically Grown (Loose)
+Avocado (Loose)
+Pomegranate - Peeled
+Sugarcane
+Bitter Gourd - Organically Grown (Loose)
+Onion - Sambhar (Loose)
+Tomato - Local, Organically Grown (Loose)
+Beetroot (Loose)
+Carrot - Ooty (Loose)
+Pumpkin - Disco
+Pineapple - Chunks, Single Serve
+Green Peas (Loose)
+Mosambi (Loose)
+Capsicum - Green, Organically Grown (Loose)

@@ -48,7 +48,7 @@ def send_price_change_notifications(existing_df, all_updated_products):
             updated_df = pd.DataFrame(updated_products, columns=["product_name", "original_price_prev", "discounted_price_prev", "discount_prev", "category", "quantity", "timestamp", "original_price_cur", "discounted_price_cur", "discount_cur"])
 
             # Find rows where prices have changed
-            price_changed_rows = updated_df[updated_df['discounted_price_prev'] != updated_df['discounted_price_cur']]
+            price_changed_rows = updated_df[(updated_df['discounted_price_prev'] != updated_df['discounted_price_cur'])]
 
             # Check if there are price changes in this category
             if not price_changed_rows.empty:
