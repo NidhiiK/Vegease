@@ -1,9 +1,13 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
+# # Load your data from both Otipy and BigBasket into DataFrames
+# otipy_data = pd.read_excel('E:\VegEase\Vegease\Otipy\otipy_products.xlsx')
+# bigbasket_data = pd.read_excel('E:\VegEase\Vegease\BigBasket\Bigbasket_products.xlsx')
+
 # Load your data from both Otipy and BigBasket into DataFrames
-otipy_data = pd.read_excel('E:\VegEase\Vegease\Otipy\otipy_products.xlsx')
-bigbasket_data = pd.read_excel('E:\VegEase\Vegease\BigBasket\Bigbasket_products.xlsx')
+otipy_data = pd.read_excel(r'D:\Nidhi\Vegease\Otipy\otipy_products.xlsx')
+bigbasket_data = pd.read_excel(r'D:\Nidhi\Vegease\BigBasket\Bigbasket_products.xlsx')
 
 # Assuming both DataFrames have a 'product_name' and 'discounted_price' column
 # Merge the two DataFrames on 'product_name'
