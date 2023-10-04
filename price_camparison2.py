@@ -22,12 +22,12 @@ otipy_data['discounted_price'] = otipy_data['discounted_price'].apply(extract_nu
 bigbasket_data['discounted_price'] = bigbasket_data['discounted_price'].apply(extract_numeric)
 
 # Merge the datasets based on a common attribute (e.g., 'product_name')
-merged_data = pd.merge(otipy_data, bigbasket_data, on='product_name', suffixes=('_otipy', '_bigbasket'))
+merged_data = pd.merge(otipy_data, bigbasket_data, on='product_name')
 
 # Create line plots to compare prices for different products
 plt.figure(figsize=(12, 6))
 for index, row in merged_data.iterrows():
-    plt.plot(['Otipy', 'BigBasket'], [row['discounted_price_otipy'], row['discounted_price_bigbasket']], marker='o', label=row['product_name_otipy'], alpha=0.7)
+    plt.plot(['Otipy', 'BigBasket'], [row['discounted_price'], row['discounted_price']], marker='o', label=row['product_name_otipy'], alpha=0.7)
 
 plt.xlabel('Retailer')
 plt.ylabel('Price (in INR)')
@@ -37,7 +37,7 @@ plt.legend()
 plt.tight_layout()
 
 # Save the plot as an image (e.g., PNG)
-plt.savefig('price_comparison.png')
+plt.savefig('price_comparison2.png')
 
 # Display the plot
 plt.show()

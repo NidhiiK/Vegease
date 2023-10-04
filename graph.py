@@ -29,7 +29,7 @@ plt.legend()
 plt.tight_layout()
 
 # Save the plot as an image (e.g., PNG)
-plt.savefig('price_comparison.png')
+plt.savefig('price_comparison2.png')
 
 # Display the plot
 plt.show()

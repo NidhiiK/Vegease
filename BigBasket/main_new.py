@@ -2,7 +2,7 @@ import os
 import sqlite3
 import pandas as pd
 import xlsxwriter
-from scraper import scrape_products  # Import your BigBasket scraper function
+from scraper import scrape_products
 from notifier import send_notification
 from utils import load_inserted_products, update_inserted_products
 from datetime import datetime
@@ -18,7 +18,7 @@ def create_excel_file(categories):
     workbook.close()
 
 # Define the main function to scrape, process, and store data
-def main_function(url, category_name, existing_df):
+def main_function(url, category_name, existing_df, last_notified_prices):
     # Scrape the website
     bigbasket_product_cards = scrape_products(url)  # Replace 'scrape_products' with your actual BigBasket scraper function name
 
@@ -66,7 +66,10 @@ def main_function(url, category_name, existing_df):
         else:
             existing_product = c.execute("SELECT DISTINCT * FROM products WHERE product_name=?", (product_name,)).fetchone()
             if existing_product and existing_product[2] != discounted_price:
-                updated_products.append((product_name, original_price, discounted_price, discount))
+                # Check if the price has changed since the last notification
+                last_price = last_notified_prices.get(product_name)
+                if last_price is None or last_price != discounted_price:
+                    updated_products.append((product_name, original_price, discounted_price, discount))
         
         
         # Update or insert the product details in the database
@@ -91,6 +94,9 @@ if __name__ == "__main__":
         ('https://www.bigbasket.com/pc/fruits-vegetables/fresh-fruits/?nc=ct-fa', 'Fresh Fruits'),
     ]
 
+    # Load the last notified prices from a file or another source
+    last_notified_prices = {}  # Initialize an empty dictionary
+
     # Create Excel file with sheets if it doesn't exist
     if not os.path.isfile(r'D:\Nidhi\Vegease\BigBasket\Bigbasket_products.xlsx'):
         create_excel_file(categories)
@@ -100,7 +106,7 @@ if __name__ == "__main__":
     existing_df = pd.DataFrame()  # Initialize an empty DataFrame to store existing data
 
     for url, category in categories:
-        new_category_products, updated_category_products = main_function(url, category, existing_df)
+        new_category_products, updated_category_products = main_function(url, category, existing_df, last_notified_prices)
         all_new_products[category] = new_category_products
         all_updated_products[category] = updated_category_products
     
@@ -128,7 +134,15 @@ if __name__ == "__main__":
 
     # Send notifications for new and updated products
     if new_products_notification_text:
-        send_notification("BigBasket: New Products Alert", f"New products added:\n{new_products_notification_text}\nCheck them out!", 'kdhini2807@gmail.com')
+        send_notification("New Products Alert", f"New products added:\n{new_products_notification_text}\nCheck them out!", 'kdhini2807@gmail.com')
 
     if updated_products_notification_text:
-        send_notification("BigBasket: Price Changes Alert", f"Price changes detected:\n{updated_products_notification_text}\nTime to grab a deal!", 'kdhini2807@gmail.com')
+        send_notification("Price Changes Alert", f"Price changes detected:\n{updated_products_notification_text}\nTime to grab a deal!", 'kdhini2807@gmail.com')
+
+    # Update the last notified prices with the current prices
+    for _, updated_products in all_updated_products.items():
+        for product_name, _, current_price, _ in updated_products:
+            last_notified_prices[product_name] = current_price
+
+    # Save the last notified prices to a file or another source for future reference
+    # You can implement this part as needed based on your preferences

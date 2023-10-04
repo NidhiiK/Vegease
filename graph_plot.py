@@ -50,7 +50,7 @@ axes[0, 1].set_title('BigBasket Discounted Prices by Category')
 plt.tight_layout()
 
 # Save the plot as an image (e.g., PNG)
-plt.savefig('price_comparison.png')
+plt.savefig('price_comparison3.png')
 
 # Display the plots
 plt.show()
