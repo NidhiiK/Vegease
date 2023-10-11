@@ -37,6 +37,12 @@ def main_function(url, category_name, existing_df):
         previous_price TEXT,  -- Add this column to store previous price
         timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP)''')
 
+    # Create a table to store price history if not exists
+    c.execute('''CREATE TABLE IF NOT EXISTS price_history (
+        product_name TEXT,
+        price TEXT,
+        timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP)''')
+
     # Load the set of inserted products from the file
     inserted_products = load_inserted_products(r'D:\Nidhi\Vegease\Otipy\otipy_inserted_products.txt')
 
@@ -59,31 +65,28 @@ def main_function(url, category_name, existing_df):
         discount = discount_elem.text.strip() if discount_elem else "N/A"
         quantity = quantity_elem.text.strip() if quantity_elem else "N/A"
 
-
-        # # Check if the product is new or updated
-        # if product_name not in inserted_products:
-        #     new_products.append((product_name, original_price, discounted_price, discount))
-        #     inserted_products.add(product_name)
-        # else:
-        #     existing_product = c.execute("SELECT DISTINCT * FROM products WHERE product_name=?", (product_name,)).fetchone()
-        #     if existing_product and existing_product[2] != discounted_price:
-        #         updated_products.append((product_name, original_price, discounted_price, discount))
-        #     # Update the previous price in the database
-        #     c.execute("UPDATE products SET previous_price = ? WHERE product_name = ?", (existing_product[2], product_name))
-            
+        # Check if the product is new or updated
         if product_name not in inserted_products:
             new_products.append((product_name, original_price, discounted_price, discount))
             inserted_products.add(product_name)
         else:
-            existing_product = c.execute("SELECT DISTINCT * FROM products WHERE product_name=?", (product_name,)).fetchone()
-            if existing_product and existing_product[2] != discounted_price:
-                updated_products.append((product_name, original_price, discounted_price, discount))
-            
+            # Get the previous price from the price history table
+            c.execute("SELECT price FROM price_history WHERE product_name = ? ORDER BY timestamp DESC LIMIT 1", (product_name,))
+            previous_price = c.fetchone()
+
+            if previous_price is not None:
+                previous_price = previous_price[0]
+                if previous_price != discounted_price:
+                    updated_products.append((product_name, original_price, discounted_price, discount))
+
+            # Update the price history with the current price
+            c.execute("INSERT INTO price_history (product_name, price) VALUES (?, ?)", (product_name, discounted_price))
+
         # Update or insert the product details in the database
         c.execute('''INSERT OR REPLACE INTO products (product_name, original_price, discounted_price, discount, quantity, category) VALUES (?,?,?,?,?,?)''',
-          (product_name, original_price, discounted_price, discount, quantity, category_name))
+                  (product_name, original_price, discounted_price, discount, quantity, category_name))
 
-        # Update previous prices for the product
+        # Update the previous price in the database
         c.execute("UPDATE products SET previous_price = ? WHERE product_name = ?", (discounted_price, product_name))
 
     # Commit changes and close database connection
@@ -113,7 +116,7 @@ if __name__ == "__main__":
         new_category_products, updated_category_products = main_function(url, category, existing_df)
         all_new_products[category] = new_category_products
         all_updated_products[category] = updated_category_products
-    
+
     # Concatenate the existing DataFrame with new data
     for category in categories:
         category_name = category[1]
@@ -121,17 +124,17 @@ if __name__ == "__main__":
         df = pd.read_sql_query(f"SELECT * FROM products WHERE category='{category_name}'", conn)
         conn.close()
         existing_df = pd.concat([existing_df, df], ignore_index=True)
-     
+
         # Remove duplicates from the combined DataFrame
-        existing_df.drop_duplicates(subset=["product_name"], keep="last", inplace=True)    
-        
+        existing_df.drop_duplicates(subset=["product_name"], keep="last", inplace=True)
+
     # Update Excel file and sheets
     with pd.ExcelWriter(r'D:\Nidhi\Vegease\Otipy\otipy_products.xlsx', engine='xlsxwriter') as writer:
         for category in categories:
             category_name = category[1]
             df_category = existing_df[existing_df["category"] == category_name]
             df_category.to_excel(writer, sheet_name=category_name, index=False)
-            
+
     # Prepare notification messages for new and updated products
     new_products_notification_text = "\n".join([f"Category: {category}\n{format_notification_table(products)}" for category, products in all_new_products.items() if products])
     updated_products_notification_text = "\n".join([f"Category: {category}\n{format_notification_table(products)}" for category, products in all_updated_products.items() if products])
