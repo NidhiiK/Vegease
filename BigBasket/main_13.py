@@ -84,19 +84,19 @@ def main_function(url, category_name, existing_df):
 
         # Check if the product is new or updated
         if product_name not in inserted_products:
-            new_products.append((product_name, original_price, discounted_price, discount))
+            new_products.append((product_name, original_price, discounted_price, quantity))
             inserted_products.add(product_name)
         else:
             # Get the most recent price from the price history
             c_history.execute("SELECT price FROM price_history WHERE product_name=? ORDER BY timestamp DESC LIMIT 1", (product_name,))
             last_price = c_history.fetchone()
-            
+
             if last_price is not None and last_price[0] != discounted_price:
-                updated_products.append((product_name, last_price[0], discounted_price, discount))
+                updated_products.append((product_name, last_price[0], discounted_price, quantity))
 
         # Update or insert the product details in the database
         c_products.execute('''INSERT OR REPLACE INTO products (product_name, original_price, discounted_price, discount, quantity, category) VALUES (?,?,?,?,?,?)''',
-                      (product_name, original_price, discounted_price, discount, quantity, category_name))
+                          (product_name, original_price, discounted_price, discount, quantity, category_name))
 
         # Record the current price in the price history
         c_history.execute("INSERT INTO price_history (product_name, price) VALUES (?, ?)", (product_name, discounted_price))
@@ -145,19 +145,20 @@ if __name__ == "__main__":
         # Remove duplicates from the combined DataFrame
         existing_df.drop_duplicates(subset=["product_name"], keep="last", inplace=True)
 
+
     # Update Excel file and sheets
     with pd.ExcelWriter(r'D:\Nidhi\Vegease\BigBasket\Bigbasket_products.xlsx', engine='xlsxwriter') as writer:
-      for category in categories:
-        category_name = category[1]
-        df_category = existing_df[existing_df["category"] == category_name]
-        df_category.to_excel(writer, sheet_name=category_name, index=False)  # This line should be indented correctly
+        for category in categories:
+            category_name = category[1]
+            df_category = existing_df[existing_df["category"] == category_name]
+            df_category.to_excel(writer, sheet_name=category_name, index=False)  # This line should be indented correctly
 
     # Prepare notification messages for new and updated products
     new_products_notification_text = "\n".join([f"Category: {category}\n{format_notification_table(products)}" for category, products in all_new_products.items() if products])
     updated_products_notification_text = "\n".join([f"Category: {category}\n{format_notification_table(products)}" for category, products in all_updated_products.items() if products])
-    
-    print(f"Category: {category_name}\n{df_category.head()}")
 
+    # Print the DataFrame head for the last category
+    print(f"Category: {category_name}\n{df_category.head()}")
 
     # Send notifications for new and updated products
     if new_products_notification_text:
@@ -165,4 +166,3 @@ if __name__ == "__main__":
 
     if updated_products_notification_text:
         send_notification("BigBasket: Price Changes Alert", f"Price changes detected:\n{updated_products_notification_text}\nTime to grab a deal!", 'kdhini2807@gmail.com')
-
