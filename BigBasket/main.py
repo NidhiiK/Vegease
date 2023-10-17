@@ -6,7 +6,9 @@ from scraper import scrape_products  # Import your scraper function
 from notifier import send_notification
 from utils import load_inserted_products, update_inserted_products
 from datetime import datetime
+import pytz 
 from notification_formatter import format_notification_table
+from notification_formatter import format_notification_table_np
 
 # Define a function to create an Excel file with multiple sheets
 def create_excel_file(categories):
@@ -81,26 +83,32 @@ def main_function(url, category_name, existing_df):
         discounted_price = discounted_price_elem.text.strip() if discounted_price_elem else "N/A"
         discount = discount_elem.text.strip() if discount_elem else "N/A"
         quantity = quantity_elem.text.strip() if quantity_elem else "N/A"
-
+        
+        
+        # Set the timezone to IST
+        ist = pytz.timezone('Asia/Kolkata')
+        current_time = datetime.now(ist)
+        
         # Check if the product is new or updated
         if product_name not in inserted_products:
             new_products.append((product_name, original_price, discounted_price, quantity))
             inserted_products.add(product_name)
-        else:
-            # Get the most recent price from the price history
-            c_history.execute("SELECT price FROM price_history WHERE product_name=? ORDER BY timestamp DESC LIMIT 1", (product_name,))
-            last_price = c_history.fetchone()
+       
+        # Get the most recent price from the price history
+        c_history.execute("SELECT price FROM price_history WHERE product_name=? ORDER BY timestamp DESC LIMIT 1", (product_name,))
+        last_price = c_history.fetchone()
 
-            if last_price is not None and last_price[0] != discounted_price:
+        if last_price is not None and last_price[0] != discounted_price:
                 updated_products.append((product_name, last_price[0], discounted_price, quantity))
-
-        # Update or insert the product details in the database
-        c_products.execute('''INSERT OR REPLACE INTO products (product_name, original_price, discounted_price, discount, quantity, category) VALUES (?,?,?,?,?,?)''',
-                          (product_name, original_price, discounted_price, discount, quantity, category_name))
-
-        # Record the current price in the price history
+                
+            # Record the current price in the price history
         c_history.execute("INSERT INTO price_history (product_name, price) VALUES (?, ?)", (product_name, discounted_price))
 
+        # Update or insert the product details in the database
+        c_products.execute('''INSERT OR REPLACE INTO products (product_name, original_price, discounted_price, discount, quantity, category, timestamp) VALUES (?,?,?,?,?,?,?)''',
+                          (product_name, original_price, discounted_price, discount, quantity, category_name, current_time))
+
+        
     # Commit changes and close the database connections
     conn_products.commit()
     conn_products.close()
@@ -154,7 +162,7 @@ if __name__ == "__main__":
             df_category.to_excel(writer, sheet_name=category_name, index=False)  # This line should be indented correctly
 
     # Prepare notification messages for new and updated products
-    new_products_notification_text = "\n".join([f"Category: {category}\n{format_notification_table(products)}" for category, products in all_new_products.items() if products])
+    new_products_notification_text = "\n".join([f"Category: {category}\n{format_notification_table_np(products)}" for category, products in all_new_products.items() if products])
     updated_products_notification_text = "\n".join([f"Category: {category}\n{format_notification_table(products)}" for category, products in all_updated_products.items() if products])
 
     # Print the DataFrame head for the last category
