@@ -5,12 +5,11 @@ import xlsxwriter
 from scraper import scrape_products
 from notifier import send_notification
 from utils import load_inserted_products, update_inserted_products
-from datetime import datetime
 from notification_formatter import format_notification_table
 
 # Define a function to create an Excel file with multiple sheets
 def create_excel_file(categories):
-    workbook = xlsxwriter.Workbook('E:\VegEase\Vegease\Otipy\otipy_products.xlsx')
+    workbook = xlsxwriter.Workbook(r'D:\Nidhi\Vegease\Otipy\otipy_products.xlsx')
     
     for _, category_name in categories:
         workbook.add_worksheet(category_name)
@@ -22,23 +21,22 @@ def main_function(url, category_name, existing_df):
     # Scrape the website
     otipy_product_cards = scrape_products(url)
 
-    # Set up SQLite database connection
-    conn = sqlite3.connect('E:\VegEase\Vegease\Otipy\otipy_products_database.db')
-    c = conn.cursor()
+    # Set up SQLite database connection for products
+    conn_products = sqlite3.connect(r'D:\Nidhi\Vegease\Otipy\otipy_products_database.db')
+    c_products = conn_products.cursor()
 
-    # Create products table if not exists
-    c.execute('''CREATE TABLE IF NOT EXISTS products (
+    # Set up SQLite database connection for price history
+    conn_history = sqlite3.connect(r'D:\Nidhi\Vegease\Otipy\otipy_price_history.db')
+    c_history = conn_history.cursor()
+
+    # Create the price history table if it doesn't exist
+    c_history.execute('''CREATE TABLE IF NOT EXISTS price_history (
         product_name TEXT,
-        original_price TEXT,
-        discounted_price TEXT,
-        discount TEXT,
-        category TEXT,
-        quantity TEXT,
-        previous_price TEXT,  -- Add this column to store previous price
+        price TEXT,
         timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP)''')
 
     # Load the set of inserted products from the file
-    inserted_products = load_inserted_products('E:\VegEase\Vegease\Otipy\otipy_inserted_products.txt')
+    inserted_products = load_inserted_products(r'D:\Nidhi\Vegease\Otipy\otipy_inserted_products.txt')
 
     # Lists to keep track of new and updated products
     new_products = []
@@ -59,40 +57,38 @@ def main_function(url, category_name, existing_df):
         discount = discount_elem.text.strip() if discount_elem else "N/A"
         quantity = quantity_elem.text.strip() if quantity_elem else "N/A"
 
-        # # Check if the product is new or updated
-        # if product_name not in inserted_products:
-        #     new_products.append((product_name, original_price, discounted_price, discount))
-        #     inserted_products.add(product_name)
-        # else:
-        #     existing_product = c.execute("SELECT DISTINCT * FROM products WHERE product_name=?", (product_name,)).fetchone()
-        #     if existing_product and existing_product[2] != discounted_price:
-        #         updated_products.append((product_name, original_price, discounted_price, discount))
-        #     # Update the previous price in the database
-        #     c.execute("UPDATE products SET previous_price = ? WHERE product_name = ?", (existing_product[2], product_name))
-            
+        # Check if the product is new or updated
         if product_name not in inserted_products:
-            new_products.append((product_name, original_price, discounted_price, discount))
+            new_products.append((product_name, original_price, discounted_price, quantity))
             inserted_products.add(product_name)
         else:
-            existing_product = c.execute("SELECT DISTINCT * FROM products WHERE product_name=?", (product_name,)).fetchone()
-            if existing_product and existing_product[2] != discounted_price:
-                updated_products.append((product_name, original_price, discounted_price, discount))
-            
-        # Update or insert the product details in the database
-        c.execute('''INSERT OR REPLACE INTO products (product_name, original_price, discounted_price, discount, quantity, category) VALUES (?,?,?,?,?,?)''',
-          (product_name, original_price, discounted_price, discount, quantity, category_name))
+            # Get the previous price from the price history database
+            c_history.execute("SELECT price FROM price_history WHERE product_name = ? ORDER BY timestamp DESC LIMIT 1", (product_name,))
+            previous_price = c_history.fetchone()
 
-        # Update previous prices for the product
-        c.execute("UPDATE products SET previous_price = ? WHERE product_name = ?", (discounted_price, product_name))
+            if previous_price is not None:
+                previous_price = previous_price[0]
+                if previous_price != discounted_price:
+                    updated_products.append((product_name, previous_price, discounted_price, quantity))
 
-    # Commit changes and close database connection
-    conn.commit()
-    conn.close()
+            # Update the price history with the current price
+            c_history.execute("INSERT INTO price_history (product_name, price) VALUES (?, ?)", (product_name, discounted_price))
+
+        # Update or insert the product details in the products database
+        c_products.execute('''INSERT OR REPLACE INTO products (product_name, original_price, discounted_price, discount, quantity, category, previous_price) VALUES (?,?,?,?,?,?,?)''',
+                  (product_name, original_price, discounted_price, discount, quantity, category_name, previous_price))
+
+    # Commit changes and close database connections
+    conn_products.commit()
+    conn_products.close()
+    conn_history.commit()
+    conn_history.close()
 
     # Update the inserted products file
-    update_inserted_products('E:\VegEase\Vegease\Otipy\otipy_inserted_products.txt', inserted_products)
+    update_inserted_products(r'D:\Nidhi\Vegease\Otipy\otipy_inserted_products.txt', inserted_products)
 
     return new_products, updated_products
+
 
 if __name__ == "__main__":
     categories = [
@@ -101,7 +97,7 @@ if __name__ == "__main__":
     ]
 
     # Create Excel file with sheets if it doesn't exist
-    if not os.path.isfile('E:\VegEase\Vegease\Otipy\otipy_products.xlsx'):
+    if not os.path.isfile(r'D:\Nidhi\Vegease\Otipy\otipy_products.xlsx'):
         create_excel_file(categories)
 
     all_new_products = {}
@@ -112,32 +108,32 @@ if __name__ == "__main__":
         new_category_products, updated_category_products = main_function(url, category, existing_df)
         all_new_products[category] = new_category_products
         all_updated_products[category] = updated_category_products
-    
+
     # Concatenate the existing DataFrame with new data
     for category in categories:
         category_name = category[1]
-        conn = sqlite3.connect('E:\VegEase\Vegease\Otipy\otipy_products_database.db')
+        conn = sqlite3.connect(r'D:\Nidhi\Vegease\Otipy\otipy_products_database.db')
         df = pd.read_sql_query(f"SELECT * FROM products WHERE category='{category_name}'", conn)
         conn.close()
         existing_df = pd.concat([existing_df, df], ignore_index=True)
-     
+
         # Remove duplicates from the combined DataFrame
-        existing_df.drop_duplicates(subset=["product_name"], keep="last", inplace=True)    
-        
+        existing_df.drop_duplicates(subset=["product_name"], keep="last", inplace=True)
+
     # Update Excel file and sheets
-    with pd.ExcelWriter('E:\VegEase\Vegease\Otipy\otipy_products.xlsx', engine='xlsxwriter') as writer:
+    with pd.ExcelWriter(r'D:\Nidhi\Vegease\Otipy\otipy_products.xlsx', engine='xlsxwriter') as writer:
         for category in categories:
             category_name = category[1]
             df_category = existing_df[existing_df["category"] == category_name]
             df_category.to_excel(writer, sheet_name=category_name, index=False)
-            
+
     # Prepare notification messages for new and updated products
     new_products_notification_text = "\n".join([f"Category: {category}\n{format_notification_table(products)}" for category, products in all_new_products.items() if products])
     updated_products_notification_text = "\n".join([f"Category: {category}\n{format_notification_table(products)}" for category, products in all_updated_products.items() if products])
 
     # Send notifications for new and updated products
     if new_products_notification_text:
-        send_notification("New Products Alert", f"New products added:\n{new_products_notification_text}\nCheck them out!", 'kdhini2807@gmail.com')
+        send_notification("Otipy: New Products Alert", f"New products added:\n{new_products_notification_text}\nCheck them out!", 'kdhini2807@gmail.com')
 
     if updated_products_notification_text:
-        send_notification("Price Changes Alert", f"Price changes detected:\n{updated_products_notification_text}\nTime to grab a deal!", 'kdhini2807@gmail.com')
+        send_notification("Otipy: Price Changes Alert", f"Price changes detected:\n{updated_products_notification_text}\nTime to grab a deal!", 'kdhini2807@gmail.com')
