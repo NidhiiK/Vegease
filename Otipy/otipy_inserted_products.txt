@@ -1,229 +1,230 @@
-Cucumber - Seedless (Kheera)
-Pomegranate - Large (Anaar)
-Broccoli
-Apple Golden Delicious - Small
-Dragon Fruit - Red
-Organic Brinjal - Small (Chu Chu Baingan)
-Pumpkin - Green (Medium Sitafal)
-Betel Leaf (Paan Patta)
-Hydroponic Bok Choy
-Tadaa Sweet Boiled Corn - Kernels
-Pear - Packham (Imported)
-Cut Drumstick (Moringa)
-Apricot (Dried Khubani) - Imported
-Curry Leaves - With Roots (Kadi Patta)
-Ramphal
-Tadaa Sweet Boiled Corn - Chat Masala
-Beans - Cowpea (Lobia Phali)
-Ready to Eat Salad
-Banana - Economy
-Organic Onion (Pyaaz)
-Mongra
-Apple Royal Gala (Small) - Indian
-Cabbage - Red (Patta Gobhi)
-Organic Chilli - Hybrid (Mirch)
-Baby Carrot - Orange (Gajar)
-Potato - Jumbo (Aloo) - French Fries Special
-Brown Coconut - Medium (Nariyal)
-Organic Bottle Gourd - Long (Lauki)
-Sprouts - Bajra (Millets)
-Lemon Grass
-Organic Cauliflower (Phool Gobhi)
-Thyme
-Pear - Beauty Red (Imported)
-Potato (Aloo)
-Sweet Lime - Greenish Yellow (Medium)
-Hydroponic Baby Spinach (Paalak)
-Watermelon - Medium (Tarbuj)
-Sprouts - Kabuli Chana
-Tadaa Sweet Boiled Corn - Cheese and Herbs
-Sprouts - Chana
-Tomato - Cherry (Tamatar)
-Tadaa Sweet Boiled Corn - Peri Peri
-Plum - Imported
-Yam (Jimikand)
-Pear - Indian (Nakh)
-Lettuce - Red (Lollo Rosso)
-Organic Ash Gourd (Safed Petha)
-Ivy Gourd (Kundru)
-Organic Cabbage - Green (Patta Gobhi)
-Baby Onion (Pyaaz)
-Sweet Tamarind (Imli) - Imported
-Custard Apple (Sharifa)
-Bitter Gourd (Karela)
-Apple - Small
-Cauliflower - Large (Phool Gobhi)
-Hydroponic Lettuce - Red and Green
-Banana - Yelakki (Elaichi Banana)
-Bottle Gourd - Medium (Lauki)
-Hydroponic Basil (Tulsi)
-Sarson Leaves
 Banana Leaf
-Gooseberry (Amla)
-Potato - Carisma (Aloo) - Lower Glycemix Index
-Organic Turmeric - Raw (Haldi)
-Organic Beetroot (Chukandar)
-Zucchini - Green
-Cut Carrot - Julienne (Thin Stripes)
-Sprouts - Moth
-Ameranthus Microgreens
-Pineapple - Rani (Whole Ananas)
-Pooja Nariyal
-Pomegranate - Medium (Anaar)
-Sprouts - Moong
-Beans - French (Phali)
-Hydroponic Lettuce - Green
-Snake Gourd (Chichinda)
-Hydroponic Cucumber - Seedless (Kheera)
-Organic Carrot - Orange (Gajar)
-Radish Microgreens
-Grapes - Red Globe (Imported)
-Raw Papaya (Kacha Papita)
-Sprouts - Kulthi
-Pointed Gourd (Parval)
-Kiwi Zespri - Green (Imported)
-Tadaa Boiled Sweet Corn Cob
-Lettuce - Green
-Apple - Red Delicious (Medium)
-Mini Orange (Mandarin) - Imported
-Capsicum - Green (Shimla Mirch)
-Apple - Large
-Pineapple Opener (Corer and Slicer)
+Organic Cucumber - Hybrid (Kheera)
+Brown Coconut - Medium (Nariyal)
 Capsicum - Red (Shimla Mirch)
-Papaya (Papita)
-Ginger - New (Adrak)
-Celery
-Super Sweetcorn Kernels - Chat Masala (Pack of 2 - 145g Each)
-Banana - Medium
-Dry Dates (Khajoor)
-Banana - Small
-Cucumber - Hybrid (Kheera)
-Hydroponic Caesar Mix Salad
-Radish (With Leaves)
-Chilli - Hybrid (Hari Mirch)
-Baby Corn
-Grapes - Imported
-Potato - Neelkanth (Sugar free Aloo)
-Grapefruit - Imported
-Mustard Microgreens
-Ridge Gourd (Tori)
-Orange - Green (Medium)
-Banana - Raw
+Pineapple Opener (Corer and Slicer)
 Organic Brinjal - Round (Baingan)
-Organic Arbi (Colocasia)
-Organic Bhindi (Okra)
-Malta (Sweet Orange) - Imported
-Hydroponic Leafy Salad (Seeds Dressing)
+Sweet Lime - Greenish Yellow (Medium)
 Sweet Corn Cob (Bhutta)
-Organic Bitter Gourd (Karela)
-Zucchini - Yellow
-Tinda (Indian Squash)
-Orange - Green (Small)
-Apple - Medium
-Sprouts - Methi
-Thai Guava - Pink (Amrudh)
-Green Peas - Peeled (Matar)
-Hydroponic Leafy Salad Mix
-Pomegranate - Small (Anaar)
-Hydroponic Kale (Tuskan)
-Beans - Cluster (Gawar Phali)
-Bhindi (Okra)
-Sweet Lime - Greenish Yellow (Small)
-Cabbage - Green (Patta Gobhi)
-Sun Melon (Sarda)
-Carrot - Orange (Gajar)
-Avocado - Hass (Butter Fruit) - Imported
-Onion (Pyaaz)
-Tomato - Desi (Tamatar)
-Blueberry - Imported
-Apple Royal Gala - Imported
-Organic Potato (Aloo)
-Mangosteen (Mangustan)
-Cucumber - Desi (Kheera)
-Durva Grass (Doob Grass)
-Brinjal - Round (Baingan)
-Chappan Tinda (Indian Squash)
-Chinese Cabbage
-Tender Coconut
 Cut Beetroot Julienne (Thin Stripes)
-Organic Tomato (Tamatar)
-Papaya - Small (Papita)
-Asparagus (Shatavari)
-Turmeric - Raw (Haldi)
-Hydroponic Red Cherry Tomato
-Leek
-Chiya Seeds Microgreens
-Lemon - Desi (Nimbu)
-Spinach (Paalak)
-Capsicum - Yellow (Shimla Mirch)
-Hydroponic Celery Herbs
-Kachalu
-Baby Potato (Aloo)
-Tadaa Sweet Boiled Corn - Lemon & Pepper
-Coriander Leaves - Without Roots (Dhaniya)
+Sprouts - Wheat
+Organic Potato (Aloo)
+Apple - Royal Gala (Imported)
 Organic Capsicum - Green (Shimla Mirch)
+Hydroponic Capsicum - Green (Shimla Mirch)
+Hydroponic Cucumber - Seedless (Kheera)
+Uncut Coconut - Green (Nariyal Pani)
+Apple - Red Delicious (Medium)
+Ridge Gourd (Tori)
+Thai Guava - Pink (Amrudh)
 Hydroponic Baby Corn
-Lettuce - Iceberg
-Beetroot (Chukandar)
+Lotus Stem (Kamal Kakri)
 Bottle Gourd - Long (Lauki)
-Hydroponic Red and Yellow Cherry Tomato
-Thai Ginger (Adrak)
-Fruit Gift Box - Pomegranate
-Super Sweetcorn
-Organic Garlic (Lehsun)
-Dragon Fruit (Fruit Kamalam) - Imported
-Garlic (Lehsun)
-Coconut Green (Nariyal) Opener
-Organic Beans - French (Phali)
-Parsley
-Cut Pumpkin (Kaddu)
 Potato - Red (Aloo)
-Cut Fresh Mint (Without Root)
+Lettuce - Green
+Betel Leaf (Paan Patta)
+Super Sweetcorn
+Sprouts - Methi
 Hydroponic Lettuce - Mix Herbs
-Arbi (Colocasia)
-Cut Ash Gourd (Safed Petha)
-Brinjal - Long (Purple Baingan)
-Tomato - Hybrid (Tamatar)
-Wheat Grass
-Mushroom - Button
+Leek
+Chilli - Hybrid (Hari Mirch)
+Green Peas - Peeled (Matar)
+Banana - Small
+Lettuce - Red (Lollo Rosso)
+Lemon - Desi (Nimbu)
 Green Peas (Matar)
+Hydroponic Lettuce - Red and Green
+Sun Melon (Sarda)
+Tomato - Hybrid (Tamatar)
+Organic Tomato (Tamatar)
+Apple Royal Gala - Imported
+Super Sweetcorn - Kernels (Pack of 2 - 250g Each)
+Sprouts - Moth
+Banana - Medium
+Capsicum - Green (Shimla Mirch)
+Apple Ber (Jujube)
+Malta (Sweet Orange) - Imported
+Organic Cucumber - Seedless (Kheera)
+Cucumber - Hybrid (Kheera)
+Tadaa Sweet Boiled Corn - Lemon & Pepper
+Custard Apple (Sharifa)
+Avocado - Hass (Butter Fruit) - Imported
+Gooseberry (Amla)
+Hydroponic Lettuce - Romaine
+Organic Pumpkin (Kaddu)
+Pear - Beauty Red (Imported)
+Garlic (Lehsun)
+Pineapple - Peeled (Ananas)
+Orange - Green (Medium)
+Pooja Nariyal
+Tender Coconut
+Tadaa Sweet Boiled Corn - Kernels
+Cut Carrot - Julienne (Thin Stripes)
+Kimia Dates (Khajoor) - Imported
+Garlic Cloves - Peeled (Lehsun)
+Turmeric - Raw (Haldi)
+Zucchini - Green
+Pumpkin - Green (Medium Sitafal)
+Hydroponic Kale (Tuskan)
+Organic Ginger (Adrak)
+Thai Snow Peas
+Grapes - Red Globe (Imported)
+Hydroponic Leafy Salad Mix
+Potato - Chipsona (Aloo) - Low Sugar
+Mango Leaves (Aam ka Patta)
+Kiwi - Green (Small) - Imported
+Carrot - Orange (Gajar)
+Thai Ginger (Adrak)
+Radish Microgreens
+Asparagus (Shatavari)
+Beetroot (Chukandar)
+Ginger - New (Adrak)
+Capsicum - Yellow (Shimla Mirch)
+Apple - Small
+Onion (Pyaaz)
+Grapes - Imported
+Sapota - Partial Ripe (Chikoo)
+Tadaa Sweet Boiled Corn - Peri Peri
+Ivy Gourd (Kundru)
+Raw Papaya (Kacha Papita)
+Sprouts - Bajra (Millets)
+Sprouts - Chana
+Coriander Leaves - Without Roots (Dhaniya)
+Apple - Medium
+Mini Orange (Mandarin) - Imported
+Sarson Leaves
+Organic Chilli - Hybrid (Mirch)
+Organic Ash Gourd (Safed Petha)
+Organic Lemon (Nimbu)
+Chiya Seeds Microgreens
+Sprouts - Kabuli Chana
+Papaya (Papita)
+Celery
+Ready to Eat Salad
+Organic Turmeric - Raw (Haldi)
+Hydroponic Lettuce - Green
+Organic Onion (Pyaaz)
+Water Chestnut (Singhara)
+Lemon Grass
+Cut Pumpkin (Kaddu)
+Organic Bhindi (Okra)
+Hydroponic Arugula (Gargeer)
+Organic Arbi (Colocasia)
+Potato (Aloo)
+Baby Potato (Aloo)
+Apple - Fuji (Indian)
+Bhindi (Okra)
+Organic Cauliflower (Phool Gobhi)
+Organic Bitter Gourd (Karela)
+Cucumber - Green
+Tadaa Sweet Boiled Corn - Cheese and Herbs
+Hydroponic Basil (Tulsi)
+Pear - Packham (Imported)
+Apple Royal Gala (Small) - Indian
+Tadaa Sweet Boiled Corn - Chat Masala
+Cabbage - Red (Patta Gobhi)
+Bitter Gourd (Karela)
+Banana - Raw
+Ramphal
+Kiwi - Zespri Gold (Imported)
+Organic Cabbage - Green (Patta Gobhi)
+Pomegranate - Medium (Anaar)
+Arbi (Colocasia)
 30 Days Coconut Pack
+Cut Fresh Mint (Without Root)
+Hydroponic Caesar Mix Salad
+Hydroponic Bok Choy
+Potato - Carisma (Aloo) - Lower Glycemix Index
+Curry Leaves - With Roots (Kadi Patta)
+Broccoli
+Cut Pulao Mix Vegetables
+Dragon Fruit (Fruit Kamalam) - Imported
+Sweet Potato (Shakarkand)
+Beans - Cluster (Gawar Phali)
+Dry Dates (Khajoor)
+Brinjal - Round (Baingan)
+Apricot (Dried Khubani) - Imported
+Hydroponic Red and Yellow Cherry Tomato
+Apple - Large
+Mushroom - Button
+Cucumber - Desi (Kheera)
+Baby Carrot - Orange (Gajar)
+Fruit Gift Box - Pomegranate
+Parsley
+Organic Beans - French (Phali)
+Apple Golden Delicious - Small
+Organic Bottle Gourd - Long (Lauki)
+Cabbage - Green (Patta Gobhi)
+Cut French Beans
+Pear - Indian (Nakh)
 Hydroponic Lettuce - Butterhead
+Chinese Cabbage
+Hydroponic Leafy Salad (Seeds Dressing)
+Mongra
+Hydroponic Baby Spinach (Paalak)
+Tomato - Desi (Tamatar)
+Pomegranate - Large (Anaar)
+Cucumber - Seedless (Kheera)
+Zucchini - Yellow
+Sprouts - Moong
+Mustard Microgreens
+Yam (Jimikand)
+Organic Brinjal - Small (Chu Chu Baingan)
+Super Sweetcorn Kernels - Chat Masala (Pack of 2 - 145g Each)
+Radish (With Leaves)
+Tinda (Indian Squash)
+Lettuce - Iceberg
+Potato - Jumbo (Aloo) - French Fries Special
+Potato - Neelkanth (Sugar free Aloo)
+Sweet Lime - Greenish Yellow (Small)
+Coconut Green (Nariyal) Opener
+Pointed Gourd (Parval)
+Pineapple - Rani (Whole Ananas)
+Dragon Fruit - Red
+Banana - Yelakki (Elaichi Banana)
+Beans - Long (Sem Papda)
+Tender Coconut (Nariyal) Opener
+Cut Ash Gourd (Safed Petha)
+Blueberry - Imported
+Beans - Cowpea (Lobia Phali)
+Sprouts - Lobia
+Watermelon - Medium (Tarbuj)
+Hydroponic Red Cherry Tomato
+Pomegranate - Small (Anaar)
+Tadaa Boiled Sweet Corn Cob
+Papaya - Small (Papita)
+Plum - Imported
+Sweet Tamarind (Imli) - Imported
 Hydroponic Red and Yellow Capsicum
 Apple - Granny (Sour Apple) - Indian
-Hydroponic Lettuce - Romaine
-Sponge Gourd (Tori)
-Apple - Fuji (Indian)
-Water Chestnut (Singhara)
-Organic Cucumber - Hybrid (Kheera)
+Organic Carrot - Orange (Gajar)
+Organic Garlic (Lehsun)
+Tomato - Cherry (Tamatar)
 Sprouts - Mix
-Apple Ber (Jujube)
-Tender Coconut (Nariyal) Opener
-Rambutan - Imported
-Organic Cucumber - Seedless (Kheera)
-Sweet Potato (Shakarkand)
-Sapota - Partial Ripe (Chikoo)
-Cut French Beans
-Organic Pumpkin (Kaddu)
-Kiwi - Zespri Gold (Imported)
-Apple - Royal Gala (Imported)
-Sweet Corn - Pellets
-Lotus Stem (Kamal Kakri)
-Sprouts - Wheat
+Cut Drumstick (Moringa)
+Kiwi Zespri - Green (Imported)
+Chappan Tinda (Indian Squash)
+Ameranthus Microgreens
+Durva Grass (Doob Grass)
+Banana - Economy
+Hydroponic Celery Herbs
+Bottle Gourd - Medium (Lauki)
+Brinjal - Long (Purple Baingan)
+Grapefruit - Imported
+Mangosteen (Mangustan)
+Snake Gourd (Chichinda)
 Banana Flower
-Thai Snow Peas
-Sprouts - Lobia
-Kiwi - Green (Small) - Imported
-Organic Ginger (Adrak)
-Potato - Chipsona (Aloo) - Low Sugar
-Cut Pulao Mix Vegetables
-Hydroponic Arugula (Gargeer)
-Uncut Coconut - Green (Nariyal Pani)
-Beans - Long (Sem Papda)
-Kimia Dates (Khajoor) - Imported
-Super Sweetcorn - Kernels (Pack of 2 - 250g Each)
-Pineapple - Peeled (Ananas)
-Organic Lemon (Nimbu)
-Cucumber - Green
-Hydroponic Capsicum - Green (Shimla Mirch)
-Garlic Cloves - Peeled (Lehsun)
+Thyme
+Sprouts - Kulthi
+Wheat Grass
+Sponge Gourd (Tori)
+Baby Onion (Pyaaz)
+Beans - French (Phali)
+Sweet Corn - Pellets
+Spinach (Paalak)
+Kachalu
+Baby Corn
+Orange - Green (Small)
+Organic Beetroot (Chukandar)
+Rambutan - Imported
+Cauliflower - Large (Phool Gobhi)
