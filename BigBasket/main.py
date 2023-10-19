@@ -21,7 +21,7 @@ def create_excel_file(categories):
 
 # Define a function to create a database for historical price records
 def create_database():
-    conn_products = sqlite3.connect(r'D:\Nidhi\Vegease\BigBasket\Bigbasket_products_database.db')
+    conn_products = sqlite3.connect(r'D:\Nidhi\Vegease\BigBasket\Bigbasket.db')
     c_products = conn_products.cursor()
 
     # Create products table if not exists
