@@ -172,7 +172,7 @@ if __name__ == "__main__":
 
     # Send notifications for new and updated products
     if new_products_notification_text:
-        send_notification("BigBasket: New Products Alert", f"New products added:\n{new_products_notification_text}\nCheck them out!", recipients)
+        send_notification("BigBasket: New Products Alert", f"New products added:\n{new_products_notification_text}\nCheck them out!", 'kdhini2807@gmail.com')
 
     if updated_products_notification_text:
-        send_notification("BigBasket: Price Changes Alert", f"Price changes detected:\n{updated_products_notification_text}\nTime to grab a deal!", recipients)
+        send_notification("BigBasket: Price Changes Alert", f"Price changes detected:\n{updated_products_notification_text}\nTime to grab a deal!", 'kdhini2807@gmail.com')
